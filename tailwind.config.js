@@ -11,7 +11,7 @@ export default {
       },
       colors:{
         "custom-dark": "#000000",
-        "custom-yellow":"#c8a97e",
+        "custom-green":"#0F766E",
         "custom-black": "#141313",
         "fff":"#d3cab6"      },
       container: {
