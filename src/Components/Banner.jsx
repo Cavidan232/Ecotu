@@ -7,7 +7,7 @@ import banner3 from "../images/banner3.png";
 
 const Banner = () => {
   const slides = [
-    { image: banner1, title: 'Plastik tullantılardan yaradıcı əl işləri' },
+    { image: banner1, title: 'Fiziki  məhdudiyyətli şəxslərin tullantılardan əl işləri platforması' },
     { image: banner2, title: 'Kağız materiallardan incə sənət nümunələri' },
     { image: banner3, title: 'Şüşə tullantılardan dekorativ əşyalar' },
   ];

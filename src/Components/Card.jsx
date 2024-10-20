@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import image1 from "../images/plastik.jpg"; // Yüksək keyfiyyətli şəkilləri burada istifadə edin
-import image2 from "../images/image2.jpg";
+import image1 from "../images/plastik.jpg";
+import image2 from "../images/kagiz2.jpg";
 import image3 from "../images/image3.jpg";
 
 function Card() {
