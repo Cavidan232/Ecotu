@@ -8,9 +8,9 @@ function Footer() {
                 
                 {/* Center Section */}
                 <div className="center">
-                    <h3 className="font-bold text-2xl text-white mb-2">Ecotu Emalatxana Haqqında</h3>
+                    <h3 className="font-bold text-2xl text-white mb-2">Ecotu Emalatxanası Haqqında</h3>
                     <p className="text-white text-lg mb-4">
-                        "Ecotu Emalatxana" təkrar emal edilə bilən tullantılardan yeni, istifadə oluna bilən məhsullar yaradır. Məqsədimiz təbiəti qorumaq və ətraf mühitə daha az zərər vurmaqdır.
+                        "Ecotu Emalatxana", fiziki məhdudiyyətli şəxslərin əl işlərindən istifadə edərək, təkrar emal edilə bilən tullantılardan yeni, istifadə oluna bilən məhsullar yaradır. Bu müəssisə, fiziki məhdudiyyətləri olan insanlara iş imkanı yaradır və onların bacarıqlarını inkişaf etdirməyə kömək edir. Məqsədimiz təbiəti qorumaq və ətraf mühitə daha az zərər vurmaqdır.
                     </p>
                     <ul>
                         <li className="text-white text-lg">♻️ Kağız və plastik təkrar emalı</li>
@@ -22,7 +22,7 @@ function Footer() {
 
                 {/* Right Section */}
                 <div className="right">
-                    <h3 className="font-bold text-2xl text-white mb-2">Sosial Şəbəkələr</h3>
+                    <h3 className="font-bold text-2xl text-white mb-2">Sosial mediada biz</h3>
                     <ul>
                         <li className="flex items-center text-white text-lg gap-2 hover:text-yellow-300 transition-all cursor-pointer">
                             <AiFillInstagram size={24} /> EcoTu.Emalatxana

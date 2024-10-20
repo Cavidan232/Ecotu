@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import banner1 from "../images/bannerEcotu.jpg";
-import banner2 from "../images/banner2.png";
-import banner3 from "../images/banner3.png";
+import banner1 from "../images/banner1.jpg"; // Set as background
+import banner2 from "../images/bg.webp";
+import banner3 from "../images/bannerEcotu.jpg";
 
 const Banner = () => {
   const slides = [
-    { image: banner1, title: 'Fiziki  məhdudiyyətli şəxslərin tullantılardan əl işləri platforması' },
-    { image: banner2, title: 'Kağız materiallardan incə sənət nümunələri' },
-    { image: banner3, title: 'Şüşə tullantılardan dekorativ əşyalar' },
+    { image: banner1, title: 'Fiziki məhdudiyyətli şəxslər üçün tullantılardan yaradıcı əl işləri platforması!' },
+    { image: banner2, title: 'Tullantılarınızı boşa verməyin - təkrar emal edərək yeni imkanlar yaradın!' },
+    { image: banner3, title: 'Tullantılardan gözəl və unikal dekorativ əşyalar yaradın – kreativliyinizlə dünyanı bəzəyin!' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,25 +29,26 @@ const Banner = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, 5000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="w-full relative h-screen font-playfair">
+    <div className="relative h-screen font-playfair bg-cover bg-center"
+         style={{ backgroundImage: `url(${slides[currentIndex].image})`, filter: 'brightness(0.7)' }}>
       {slides.map((slide, index) => (
         <div
           key={index}
           className={`absolute transition-opacity duration-1000 ease-in-out ${index === currentIndex ? 'opacity-100' : 'opacity-0'}`}
           style={{ left: 0, top: 0, width: '100%', height: '100%' }}
         >
-          <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black bg-opacity-40 flex flex-col items-center justify-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg tracking-wide">{slide.title}</h2>
-            <span className="text-gray-200 text-md md:text-lg lg:text-xl mt-2">
-              Yaradıcılığınızı {slide.title.split(' ')[0]} ilə nümayiş etdirin
-            </span>
+          <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-center">
+            <div className="max-w-2xl w-full px-4">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg tracking-wide" data-aos="fade-up">
+                {slide.title}
+              </h2>
+            </div>
           </div>
         </div>
       ))}
