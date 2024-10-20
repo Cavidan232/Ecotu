@@ -1,84 +1,61 @@
-import React, { useEffect, useState } from 'react';
-import { AiOutlineHeart, AiFillHeart, AiOutlineShoppingCart } from 'react-icons/ai';
-import { FaShoppingCart } from 'react-icons/fa';
+import React, { useEffect } from 'react';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import banner1 from "../images/banner.png";
-import banner2 from "../images/banner2.png";
-import banner3 from "../images/banner3.png";
+import image1 from "../images/plastik.jpg"; // Yüksək keyfiyyətli şəkilləri burada istifadə edin
+import image2 from "../images/image2.jpg";
+import image3 from "../images/image3.jpg";
 
 function Card() {
     const cards = [
-        { image: banner1, title: 'Indonesia - A Tropical Paradise', likes: 0 },
-        { image: banner2, title: 'Australia - Explore the Outback', likes: 0 },
-        { image: banner3, title: 'Switzerland - Land of the Alps', likes: 0 },
+        { image: image1, title: 'Plastik Tullantılardan Yenidən İstifadə', price: '15 AZN' },
+        { image: image2, title: 'Kağız Tullantılarının Yenidən İstifadəsi', price: '10 AZN' },
+        { image: image3, title: 'Şüşə Tullantılarının Yenidən İstifadəsi', price: '20 AZN' },
     ];
-
-    const [cardData, setCardData] = useState(cards);
 
     useEffect(() => {
         AOS.init({ duration: 1000 });
     }, []);
-    const increaseLikes = (targetLikes, index) => {
-        const interval = setInterval(() => {
-            setCardData((prevData) => {
-                const updatedData = [...prevData];
-                if (updatedData[index].likes < targetLikes) {
-                    updatedData[index].likes += 1;
-                } else {
-                    clearInterval(interval);
-                }
-                return updatedData;
-            });
-        }, 0.6); 
-    };
-
-    useEffect(() => {
-        cardData.forEach((card, index) => {
-            const targetLikes = Math.floor(Math.random() * (500000 - card.likes + 1)) + card.likes; 
-            increaseLikes(targetLikes, index);
-        });
-    }, []);
 
     return (
-        <div>
-            <section className='container mx-auto px-10 items-center flex flex-col gap-4'>
-                <div className="top mb-6"><h1 className='text-5xl font-bold text-custom-yellow'>Best Travel Destinations</h1></div>
-                <div className='cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
-                    {cardData.map((card, index) => (
+        <div className="py-12 bg-gray-100">
+            <section className="container mx-auto px-10">
+                <div className="mb-8 text-center">
+                    <h1 className="text-5xl font-bold text-custom-yellow mb-4">Tullantıdan Sənətə</h1>
+                    <p className="text-xl text-gray-700">Yenidən istifadə ilə yaradılan ən gözəl əl işləri</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {cards.map((card, index) => (
                         <div
-                            className="card flex flex-col rounded-lg overflow-hidden shadow-lg transition-all delay-100 ease-in-out w-full transform hover:scale-105 bg-gray-800"
+                            className="card flex flex-col rounded-lg shadow-lg overflow-hidden bg-white"
                             data-aos="fade-up"
                             key={index}
                         >
-                            <div className="image rounded overflow-hidden h-64">
-                                <img src={card.image} alt="" className="w-full h-full object-cover" />
+                            {/* Şəkil bölməsi */}
+                            <div className="relative group">
+                                <img
+                                    src={card.image}
+                                    alt={card.title}
+                                    className="w-full h-64 object-cover transition-transform duration-300 ease-in-out group-hover:scale-110"
+                                />
+                                {/* Şəkil üzərinə overlay */}
+                                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
                             </div>
-                            <div className="text p-4 bg-custom-green flex-col flex-grow justify-between">
-                                <div>
-                                    <h3 className="text-xl md:text-2xl font-semibold text-white">{card.title}</h3>
-                                </div>
-                                <div className="flex justify-between items-center mt-4">
-                                    <button className="text-gray-400 hover:text-white focus:outline-none transform translate-x-0">
-                                        <FaShoppingCart size={24} />
-                                    </button>
-                                    <div className="flex items-center">
-                                        <button
-                                            className={`focus:outline-none transform ${card.likes > 0 ? 'text-red-500' : 'text-gray-400'} hover:text-red-500`}
-                                            onClick={() => handleLike(index)}
-                                        >
-                                            {card.likes > 0 ? <AiFillHeart size={24} /> : <AiOutlineHeart size={24} />}
-                                        </button>
-                                        <span className="ml-2 text-white">{card.likes}</span>
-                                    </div>
-                                </div>
+                            {/* Başlıq və qiymət bölməsi */}
+                            <div className="p-6 flex flex-col flex-grow">
+                                <h3 className="text-xl font-semibold text-gray-800 mb-2">{card.title}</h3>
+                                <p className="text-lg text-gray-600 mb-4">Qiymət: {card.price}</p>
+                                <button className="mt-auto bg-custom-green text-white py-2 px-4 rounded-md flex items-center justify-center shadow-lg hover:bg-green-700 transition-colors duration-300">
+                                    <AiOutlineShoppingCart className="mr-2" /> Səbətə əlavə et
+                                </button>
                             </div>
                         </div>
                     ))}
                 </div>
             </section>
         </div>
-    )
+    );
 }
 
 export default Card;

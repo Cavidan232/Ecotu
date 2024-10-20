@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import banner1 from "../images/banner.png";
+import banner1 from "../images/bannerEcotu.jpg";
 import banner2 from "../images/banner2.png";
 import banner3 from "../images/banner3.png";
 
 const Banner = () => {
   const slides = [
-    { image: banner1, title: 'Indonesia - A Tropical Paradise' },
-    { image: banner2, title: 'Australia - Explore the Outback' },
-    { image: banner3, title: 'Switzerland - Land of the Alps' },
+    { image: banner1, title: 'Plastik tullantılardan yaradıcı əl işləri' },
+    { image: banner2, title: 'Kağız materiallardan incə sənət nümunələri' },
+    { image: banner3, title: 'Şüşə tullantılardan dekorativ əşyalar' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -43,9 +43,11 @@ const Banner = () => {
           style={{ left: 0, top: 0, width: '100%', height: '100%' }}
         >
           <img src={slide.image} alt={slide.title} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg tracking-wide">{slide.title}</h2>
-            <span className="text-gray-300 text-lg md:text-xl lg:text-2xl mt-2">Discover {slide.title.split(' ')[0]}</span>
+          <div className="absolute inset-0 bg-gradient-to-t from-black bg-opacity-40 flex flex-col items-center justify-center">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg tracking-wide">{slide.title}</h2>
+            <span className="text-gray-200 text-md md:text-lg lg:text-xl mt-2">
+              Yaradıcılığınızı {slide.title.split(' ')[0]} ilə nümayiş etdirin
+            </span>
           </div>
         </div>
       ))}
