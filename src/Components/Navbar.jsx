@@ -50,7 +50,7 @@ function Navbar() {
           <li><Link to="/">Əsas</Link></li>
           <li><Link to="/destinations">Əl işləri</Link></li>
           <li><Link to="/emalatxana">Emalatxana</Link></li>
-          <li><Link to="/contact">Səbət</Link></li>
+          <li><Link to="/basket">Səbət</Link></li>
           <li><Link to="/team">UPSHİFT KOMANDA</Link></li>
           <li><Link to="/contact">Əlaqə</Link></li>
           {user ? (
@@ -75,8 +75,9 @@ function Navbar() {
           <li><Link to="/" onClick={openMenu}>Əsas</Link></li>
           <li><Link to="/destinations" onClick={openMenu}>Əl işləri</Link></li>
           <li><Link to="/emalatxana" onClick={openMenu}>Emalatxana</Link></li>
-          <li><Link to="/contact" onClick={openMenu}>Səbət</Link></li>
+          <li><Link to="/basket" onClick={openMenu}>Səbət</Link></li>
           <li><Link to="/team" onClick={openMenu}>Upshift Komanda</Link></li>
+          <li><Link to="/contact" onClick={openMenu}>Əlaqə</Link></li>
           {user ? (
             <>
               <li><Link to="/profile" onClick={openMenu}>{user.name}</Link></li>
