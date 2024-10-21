@@ -22,10 +22,10 @@ function Footer() {
 
                 {/* Right Section */}
                 <div className="right">
-                    <h3 className="font-bold text-2xl text-white mb-2">Sosial mediada biz</h3>
+                    <h3 className="font-bold text-2xl text-white mb-2">Sosial mediada bizi izlə</h3>
                     <ul>
                         <li className="flex items-center text-white text-lg gap-2 hover:text-yellow-300 transition-all cursor-pointer">
-                            <AiFillInstagram size={24} /> EcoTu.Emalatxana
+                            <AiFillInstagram size={24} /> ecotu_emalatxana
                         </li>
                         <li className="flex items-center text-white text-lg gap-2 hover:text-blue-500 transition-all cursor-pointer mt-2">
                             <AiFillFacebook size={24} /> EcoTu.Emalatxana

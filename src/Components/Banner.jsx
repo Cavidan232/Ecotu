@@ -7,9 +7,9 @@ import banner3 from "../images/bannerEcotu.jpg";
 
 const Banner = () => {
   const slides = [
-    { image: banner1, title: 'Fiziki məhdudiyyətli şəxslər üçün tullantılardan yaradıcı əl işləri platforması!' },
-    { image: banner2, title: 'Tullantılarınızı boşa verməyin - təkrar emal edərək yeni imkanlar yaradın!' },
-    { image: banner3, title: 'Tullantılardan gözəl və unikal dekorativ əşyalar yaradın – kreativliyinizlə dünyanı bəzəyin!' },
+    { image: banner1, title: 'Fiziki məhdudiyyətli şəxslər üçün tullantılardan yaradıcı əl işləri platforması' },
+    { image: banner2, title: 'Tullantılarınızı boşa verməyin - təkrar emal edərək yeni imkanlar yaradın' },
+    { image: banner3, title: 'Tullantılardan gözəl və unikal dekorativ əşyalar yaradın – kreativliyinizlə dünyanı bəzəyin' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

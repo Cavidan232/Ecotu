@@ -6,7 +6,7 @@ import sefiqe from "../images/team/sefiqe.jpg";
 import fayime from "../images/team/fatime.jpg";
 
 const TeamMember = ({ name, role, description, image }) => (
-  <div className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl duration-300 text-center">
+  <div className="bg-white  shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-2xl duration-300 text-center">
     <div className="flex justify-center">
       <img src={image} alt={name} className="w-32 h-32 object-cover rounded-full border-4 border-gray-300 mt-4" />
     </div>
@@ -55,8 +55,8 @@ const Team = () => {
   ];
 
   return (
-    <div className="container bg-slate-700 mx-auto p-8">
-      <h2 className="text-4xl font-bold text-center mb-8 text-gray-800">Komandamız</h2>
+    <div className="container  bg-slate-700 mx-auto pt-[100px] pb-[100px] ">
+      <h2 className="text-4xl font-bold text-center mb-8 text-white">Komandamız</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {teamMembers.map((member) => (
           <TeamMember
